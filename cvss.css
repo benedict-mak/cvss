@@ -119,6 +119,17 @@
     background-position: -18em 0;
 }
 
+.cvssjs i.BH {
+    background-position: -20em 0;
+}
+
+.cvssjs i.BL {
+    background-position: -19em 0;
+}
+
+.cvssjs i.BN {
+    background-position: -18em 0;
+}
 .cvssjs a {
     color: #489;
     text-decoration: none;
@@ -237,6 +248,7 @@
 .cvssjs dl.C dd:last-child input:checked + label,
 .cvssjs dl.I dd:last-child input:checked + label,
 .cvssjs dl.A dd:last-child input:checked + label,
+.cvssjs dl.B dd:last-child input:checked + label,
 .cvssjs .None {
     background-color: rgb(162, 213, 114);
 }
@@ -258,7 +270,8 @@
 
 .cvssjs dl.C dd:last-child label:hover,
 .cvssjs dl.I dd:last-child label:hover,
-.cvssjs dl.A dd:last-child label:hover {
+.cvssjs dl.A dd:last-child label:hover,
+.cvssjs dl.B dd:last-child label:hover {
     background-color: rgb(172, 223, 124);
 }
 
