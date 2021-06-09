@@ -212,7 +212,7 @@ var CVSS = function (id, options) {
         AC: 'LH',
         C: 'C',
         I: 'C',
-        A: 'C'
+        A: 'C',
         B: 'C'
     };
     var s, f, dl, g, dd, l;
