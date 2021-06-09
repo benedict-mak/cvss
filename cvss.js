@@ -68,7 +68,8 @@ var CVSS = function (id, options) {
         S: 'Scope',
         C: 'Confidentiality',
         I: 'Integrity',
-        A: 'Availability'
+        A: 'Availability',
+        B: 'Business Impact'
     };
 
     // Base Metrics
@@ -177,6 +178,20 @@ var CVSS = function (id, options) {
                 l: 'None',
                 d: "<b>Good:</b> There is no impact to availability within the impacted component."
             }
+        },
+        B: {
+            H: {
+                l: 'High',
+                d: "<b>Worst:</b> THave high impact on us when hacker exploit this."
+            },
+            L: {
+                l: 'Low',
+                d: "<b>Bad:</b> Less impact compare to High."
+            },
+            N: {
+                l: 'None',
+                d: "<b>Good:</b> Ignorable impact / Only impact internal environment."
+            }
         }
     };
     
@@ -189,7 +204,8 @@ var CVSS = function (id, options) {
         S: 'CU',
         C: 'HLN',
         I: 'HLN',
-        A: 'HLN'
+        A: 'HLN',
+        B: 'HLN'
     };
     this.bmoReg = {
         AV: 'NALP',
@@ -197,6 +213,7 @@ var CVSS = function (id, options) {
         C: 'C',
         I: 'C',
         A: 'C'
+        B: 'C'
     };
     var s, f, dl, g, dd, l;
     this.el = document.getElementById(id);
@@ -249,7 +266,7 @@ var CVSS = function (id, options) {
     l.appendChild(document.createTextNode(' '));
     l.appendChild(this.vector = e('a'));
     this.vector.className = 'vector';
-    this.vector.innerHTML = 'CVSS:3.1/AV:_/AC:_/PR:_/UI:_/S:_/C:_/I:_/A:_';
+    this.vector.innerHTML = 'CVSS:3.1/AV:_/AC:_/PR:_/UI:_/S:_/C:_/I:_/A:_/B:_';
     
     if (options.onsubmit) {
         f.appendChild(e('hr'));
@@ -260,23 +277,23 @@ var CVSS = function (id, options) {
 };
 
 CVSS.prototype.severityRatings = [{
-    name: "None",
+    name: "P4 Minimal",
     bottom: 0.0,
     top: 0.0
 }, {
-    name: "Low",
+    name: "P3 Minor",
     bottom: 0.1,
     top: 3.9
 }, {
-    name: "Medium",
+    name: "P2 Important",
     bottom: 4.0,
     top: 6.9
 }, {
-    name: "High",
+    name: "P1 Critical",
     bottom: 7.0,
     top: 8.9
 }, {
-    name: "Critical",
+    name: "P0 Blocker",
     bottom: 9.0,
     top: 10.0
 }];
@@ -422,8 +439,8 @@ CVSS.prototype.get = function() {
 
 CVSS.prototype.setMetric = function(a) {
     var vectorString = this.vector.innerHTML;
-    if (/AV:.\/AC:.\/PR:.\/UI:.\/S:.\/C:.\/I:.\/A:./.test(vectorString)) {} else {
-        vectorString = 'AV:_/AC:_/PR:_/UI:_/S:_/C:_/I:_/A:_';
+    if (/AV:.\/AC:.\/PR:.\/UI:.\/S:.\/C:.\/I:.\/A:.\/B:./.test(vectorString)) {} else {
+        vectorString = 'AV:_/AC:_/PR:_/UI:_/S:_/C:_/I:_/A:_/B:_';
     }
     //e("E" + a.id).checked = true;
     var newVec = vectorString.replace(new RegExp('\\b' + a.name + ':.'), a.name + ':' + a.value);
