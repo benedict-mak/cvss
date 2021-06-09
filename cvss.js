@@ -375,6 +375,11 @@ CVSS.prototype.calculate = function () {
             N: 0,
             L: 0.22,
             H: 0.56
+        },
+        A: {
+            N: 0,
+            L: 1.5,
+            H: 3.0
         }
         // C, I and A have the same weights
 
