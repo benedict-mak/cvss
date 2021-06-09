@@ -419,13 +419,14 @@ CVSS.prototype.calculate = function () {
         impactSubScore = metricWeight.S * (impactSubScoreMultiplier - 0.029) - 3.25 * Math.pow(impactSubScoreMultiplier - 0.02, 15);
     }
     var exploitabalitySubScore = exploitabilityCoefficient * metricWeight.AV * metricWeight.AC * metricWeight.PR * metricWeight.UI;
+    
     if (impactSubScore <= 0) {
         baseScore = 0;
     } else {
         if (val.S === 'U') {
-            baseScore = roundUp1(Math.min((exploitabalitySubScore + impactSubScore), 10));
+            baseScore = roundUp1(Math.min((exploitabalitySubScore + impactSubScore) + metricWeight.B, 10));
         } else {
-            baseScore = roundUp1(Math.min((exploitabalitySubScore + impactSubScore) * scopeCoefficient, 10));
+            baseScore = roundUp1(Math.min((exploitabalitySubScore + impactSubScore) * scopeCoefficient + metricWeight.B, 10));
         }
     }
 
