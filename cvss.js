@@ -376,7 +376,7 @@ CVSS.prototype.calculate = function () {
             L: 0.22,
             H: 0.56
         },
-        A: {
+        B: {
             N: 0,
             L: 1.5,
             H: 3.0
