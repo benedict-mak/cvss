@@ -120,15 +120,16 @@
 }
 
 .cvssjs i.BH {
-    background-position: -20em 0;
+    background-position: -21em 0;
 }
 
 .cvssjs i.BL {
-    background-position: -19em 0;
+    background-position: -22em 0;
+    width: 1.1em;
 }
 
 .cvssjs i.BN {
-    background-position: -18em 0;
+    background-position: -23.1em 0;
 }
 .cvssjs a {
     color: #489;
@@ -169,7 +170,7 @@
 
 .cvssjs dd label,
 #predef span {
-    min-width: 7.5em;
+    min-width: 8.5em;
     padding: 0px 2px 0px 2px;
     display: block;
     margin: 1px;
@@ -225,23 +226,23 @@
 }
 
 .cvssjs dd:nth-child(2) input:checked + label,
-.cvssjs .Critical {
+.cvssjs .Blocker {
     background-color: rgb(240, 130, 120);
 }
 
 .cvssjs dd input:checked + label,
-.cvssjs .High {
+.cvssjs .Critical {
     background-color: rgb(240, 170, 83);
     transition: background-color 0.1s ease-in-out;
 }
 
 .cvssjs dd:last-child input:checked + label,
 .cvssjs dl.AV dd:nth-child(4) input:checked + label,
-.cvssjs .Medium {
+.cvssjs .Important {
     background-color: rgb(250, 230, 120);
 }
 
-.cvssjs .Low {
+.cvssjs .Minor {
     background-color: rgb(208, 212, 134)
 }
 
@@ -292,7 +293,7 @@
 }
 
 .cvssjs .severity {
-    width: 5em;
+    width: 6em;
     border-radius: 4px;
     padding: 5px;
     text-align: center;

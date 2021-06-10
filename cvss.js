@@ -182,7 +182,7 @@ var CVSS = function (id, options) {
         B: {
             H: {
                 l: 'High',
-                d: "<b>Worst:</b> THave high impact on us when hacker exploit this."
+                d: "<b>Worst:</b> Have high impact on us when hacker exploit this."
             },
             L: {
                 l: 'Low',
