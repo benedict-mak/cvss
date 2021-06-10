@@ -182,11 +182,11 @@ var CVSS = function (id, options) {
         B: {
             H: {
                 l: 'High',
-                d: "<b>Worst:</b> Have high impact on us when hacker exploit this."
+                d: "<b>Worst:</b> Reachable from external. Have high impact on us when hacker exploit this."
             },
             L: {
                 l: 'Low',
-                d: "<b>Bad:</b> Less impact compare to High."
+                d: "<b>Bad:</b> Reachable from external. Less impact compare to High rating."
             },
             N: {
                 l: 'None',
@@ -377,8 +377,8 @@ CVSS.prototype.calculate = function () {
             H: 0.56
         },
         B: {
-            N: 0,
-            L: 1.5,
+            N: -3.0,
+            L: 0,
             H: 3.0
         }
         // C, I and A have the same weights
